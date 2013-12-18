@@ -120,3 +120,7 @@ li.text-hidden {
 	padding: 1em 2em;
 	cursor: pointer;
 }
+
+button.btn-alert {
+	background: red;
+}

@@ -2,6 +2,7 @@
 	<li ng-repeat="text in texts()" ng-class="{'text-hidden':!text.visible}">
 		<div class="message-header">
 			<h2>{{text.phone}}</h2>		
+			<button class="btn btn-alert" ng-click="deleteText(text)">Delete</button>
 			<button ng-click="toggleVisibility(text)">
 				<span ng-hide="text.visible">Show</span>
 				<span ng-show="text.visible">Hide</span>

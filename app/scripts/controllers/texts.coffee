@@ -8,13 +8,22 @@ angular.module('vns-app')
 			objToArray = (collection) ->
 				array = []
 
-				angular.forEach collection, (obj) ->
+				angular.forEach collection, (obj, id) ->
+					console.log obj.$id
 					array.push obj
 
 				array
 					
 			$scope.texts = ->
 				array = objToArray($scope.textsObject).reverse()
+				_.reject array, (text) ->
+					text.deleted
 
 			$scope.toggleVisibility = (text) ->
-				text.visible = !text.visible	
+				text.visible = !text.visible
+
+			$scope.deleteText = (text) ->
+				if confirm 'Are you sure you want to delete this message?'
+					text.deleted = true
+				else
+					false

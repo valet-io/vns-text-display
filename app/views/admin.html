@@ -1,5 +1,5 @@
 <ul>
-	<li ng-repeat="text in texts()" ng-class="{'text-hidden':!text.visible}">
+	<li ng-repeat="(id, text) in adminTexts" ng-class="{'text-hidden':!text.visible}" ng-hide="text.deleted">
 		<div class="message-header">
 			<h2>{{text.phone}}</h2>		
 			<button class="btn btn-alert" ng-click="deleteText(text)">Delete</button>
